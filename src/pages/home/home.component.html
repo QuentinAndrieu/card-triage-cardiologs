@@ -1,0 +1,42 @@
+<div cdkDropListGroup>
+  <div class="cards-container">
+    <div class="header-list header-to-do">
+      <h2>To Do</h2>
+    </div>
+
+    <div
+      cdkDropList
+      [cdkDropListData]="cardsToDo"
+      class="cards-list"
+      (cdkDropListDropped)="onDrop($event)"
+    >
+      <ct-card-patient
+        class="cards-box"
+        *ngFor="let card of cardsToDoFilter"
+        cdkDrag
+        [card]="card"
+      >
+      </ct-card-patient>
+    </div>
+  </div>
+
+  <div class="cards-container">
+    <div class="header-list header-done">
+      <h2>Done</h2>
+    </div>
+    <div
+      cdkDropList
+      [cdkDropListData]="cardsDone"
+      class="cards-list"
+      (cdkDropListDropped)="onDrop($event)"
+    >
+      <ct-card-patient
+        class="cards-box"
+        *ngFor="let card of cardsDoneFilter"
+        cdkDrag
+        [card]="card"
+      >
+      </ct-card-patient>
+    </div>
+  </div>
+</div>

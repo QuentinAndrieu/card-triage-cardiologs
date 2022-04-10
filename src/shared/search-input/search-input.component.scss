@@ -1,0 +1,8 @@
+.search-input {
+  display: inline-flex;
+  align-items: center;
+}
+
+.search-input input::placeholder {
+  color: white;
+}

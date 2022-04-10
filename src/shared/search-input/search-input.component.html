@@ -1,0 +1,11 @@
+<mat-form-field appearance="fill">
+  <div class="search-input">
+    <input
+      matInput
+      [placeholder]="placeholder"
+      [ngModel]="search"
+      (ngModelChange)="onChange($event)"
+    />
+    <mat-icon matSuffix>search</mat-icon>
+  </div>
+</mat-form-field>

@@ -1,0 +1,19 @@
+<ct-card class="card-patient">
+  <ng-container card-title>{{ card?.patient_name }}</ng-container>
+  <ng-container card-subtitle>
+    <strong [ngStyle]="{ color: getStatusColor(card?.status) }">
+      {{ card?.status }}
+    </strong>
+  </ng-container>
+  <ng-container card-content>
+    <mat-chip-list aria-label="arrhythmia">
+      <strong>Arrhythmias :</strong>
+      <mat-chip *ngFor="let arrhythmia of card?.arrhythmias">
+        {{ arrhythmia }}
+      </mat-chip>
+    </mat-chip-list>
+  </ng-container>
+  <ng-container card-footer>
+    <span class="card-date">{{ card?.created_date | date: "fullDate" }}</span>
+  </ng-container>
+</ct-card>
